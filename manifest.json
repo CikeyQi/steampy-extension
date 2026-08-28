@@ -1,0 +1,30 @@
+{
+  "name": "SteamPY",
+  "description": "在 Steam 商店页面查看 SteamPY 代购、CDK 及实时最低价格",
+  "version": "2.1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "128": "images/icon128.png"
+  },
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://steampy.com/*",
+    "https://store.steampowered.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://store.steampowered.com/app/*"],
+      "js": ["store/helpers.js", "store/sub.js"],
+      "css": ["store/style.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["images/icon128.png"],
+      "matches": ["https://store.steampowered.com/*"]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "steampy-chrome-extension",
+  "version": "2.1.0",
+  "private": true,
+  "description": "在 Steam 商店页面显示 SteamPY 代购、CDK 与实时最低价格。",
+  "scripts": {
+    "test": "node --test tests/helpers.test.js",
+    "check": "npm run test && node --check background.js && node --check store/helpers.js && node --check store/sub.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
